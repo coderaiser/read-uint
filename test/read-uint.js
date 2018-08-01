@@ -76,3 +76,23 @@ test('readUIntBE: leading zeros', (t) => {
     t.end();
 });
 
+test('readUIntLE: leading zeros', (t) => {
+    const buf = Buffer.from([0x0, 0x0, 0x0, 0x0]);
+    
+    const result = readUIntLE(buf, 0, 4);
+    const expected = '0x0';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
+test('readUIntBE: leading zeros', (t) => {
+    const buf = Buffer.from([0x0, 0x0, 0x0, 0x0]);
+    
+    const result = readUIntBE(buf, 0, 4);
+    const expected = '0x0';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
