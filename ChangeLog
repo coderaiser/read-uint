@@ -1,3 +1,9 @@
+2018.08.01, v1.0.2
+
+fix:
+- (read-uint) leading zeros
+
+
 2018.08.01, v1.0.1
 
 fix:
