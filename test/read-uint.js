@@ -20,7 +20,7 @@ test('readUIntBE', (t) => {
     const buf = Buffer.from([0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1]);
     
     const result = readUIntBE(buf, 0);
-    const expected = 'fffefffdfbfaf0f1';
+    const expected = '0xfffefffdfbfaf0f1';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();
@@ -30,7 +30,7 @@ test('readUIntLE', (t) => {
     const buf = Buffer.from([0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1]);
     
     const result = readUIntLE(buf, 0);
-    const expected = 'f1f0fafbfdfffeff';
+    const expected = '0xf1f0fafbfdfffeff';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();
@@ -40,7 +40,7 @@ test('readUIntBE: less then 0x0f', (t) => {
     const buf = Buffer.from([0x1, 0x2, 0x3, 0x4]);
     
     const result = readUIntBE(buf, 0, 4);
-    const expected = '1020304';
+    const expected = '0x1020304';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();
@@ -50,7 +50,7 @@ test('readUIntLE: less then 0x0f', (t) => {
     const buf = Buffer.from([0x1, 0x2, 0x3, 0x4]);
     
     const result = readUIntLE(buf, 0, 4);
-    const expected = '4030201';
+    const expected = '0x4030201';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();
@@ -60,7 +60,7 @@ test('readUIntLE: leading zeros', (t) => {
     const buf = Buffer.from([0x0, 0x0, 0x3, 0x0]);
     
     const result = readUIntLE(buf, 0, 4);
-    const expected = '30000';
+    const expected = '0x30000';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();
@@ -70,7 +70,7 @@ test('readUIntBE: leading zeros', (t) => {
     const buf = Buffer.from([0x0, 0x0, 0x3, 0x0]);
     
     const result = readUIntBE(buf, 0, 4);
-    const expected = '300';
+    const expected = '0x300';
     
     t.deepEqual(result, expected, 'shoudl equal');
     t.end();

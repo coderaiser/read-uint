@@ -16,20 +16,20 @@ const buf = Buffer.from([0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1]);
 
 readUIntBE(buf, 0);
 // returns
-'fffefffdfbfaf0f1';
+'0xfffefffdfbfaf0f1';
 
 readUIntLE(buf, 0);
 // returns
-'f1f0fafbfdfffe';
+'0xf1f0fafbfdfffe';
 
 // set byte length
 readUIntBE(buf, 0, 4);
 // returns
-'fffefffd';
+'0xfffefffd';
 
 readUIntLE(buf, 0, 4);
 // returns
-'f1f0fafb';
+'0xf1f0fafb';
 
 // convert to BigInt
 const a = readUIntBE(buf, 0);
