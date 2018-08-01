@@ -36,3 +36,23 @@ test('readUIntLE', (t) => {
     t.end();
 });
 
+test('readUIntBE: less then 0x0f', (t) => {
+    const buf = Buffer.from([0x1, 0x2, 0x3, 0x4]);
+    
+    const result = readUIntBE(buf, 0, 4);
+    const expected = '1020304';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
+test('readUIntLE: less then 0x0f', (t) => {
+    const buf = Buffer.from([0x1, 0x2, 0x3, 0x4]);
+    
+    const result = readUIntLE(buf, 0, 4);
+    const expected = '4030201';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
