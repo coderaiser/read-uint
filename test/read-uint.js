@@ -56,3 +56,23 @@ test('readUIntLE: less then 0x0f', (t) => {
     t.end();
 });
 
+test('readUIntLE: leading zeros', (t) => {
+    const buf = Buffer.from([0x0, 0x0, 0x3, 0x0]);
+    
+    const result = readUIntLE(buf, 0, 4);
+    const expected = '30000';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
+test('readUIntBE: leading zeros', (t) => {
+    const buf = Buffer.from([0x0, 0x0, 0x3, 0x0]);
+    
+    const result = readUIntBE(buf, 0, 4);
+    const expected = '300';
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
