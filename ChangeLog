@@ -1,0 +1,5 @@
+2018.08.01, v1.0.1
+
+fix:
+- (read-uint) add leading zero
+

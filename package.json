@@ -1,6 +1,6 @@
 {
   "name": "read-uint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "read an unsigned integer from buffer",
   "main": "lib/read-uint.js",
   "scripts": {
