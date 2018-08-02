@@ -1,3 +1,9 @@
+2018.08.02, v1.1.0
+
+feature:
+- (read-uint) add support of an array
+
+
 2018.08.01, v1.0.4
 
 fix:
