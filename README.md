@@ -22,6 +22,12 @@ readUIntLE(buf, 0);
 // returns
 '0xf1f0fafbfdfffe';
 
+// same with array
+const array = [0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1];
+readUIntBE(array, 0);
+// returns
+'0xfffefffdfbfaf0f1';
+
 // set byte length
 readUIntBE(buf, 0, 4);
 // returns
