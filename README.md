@@ -47,7 +47,7 @@ const number = BigInt(parseInt(a, 16));
 In old `node.js` environments that not fully supports `es2015`, `read-uint` could be used with:
 
 ```js
-var readUInt = require('readUInt/legacy');
+var readUInt = require('read-uint/legacy');
 ```
 
 ## License
