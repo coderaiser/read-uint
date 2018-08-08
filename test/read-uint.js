@@ -116,3 +116,29 @@ test('readUIntLE: array', (t) => {
     t.end();
 });
 
+test('readUIntBE: array: no buffer', (t) => {
+    const buf = [0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1];
+    const {Buffer} = global;
+    delete global.Buffer;
+    
+    const result = readUIntBE(buf, 0);
+    const expected = '0xfffefffdfbfaf0f1';
+    global.Buffer = Buffer;
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
+test('readUIntLE: array: no buffer', (t) => {
+    const buf = [0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1];
+    const {Buffer} = global;
+    delete global.Buffer;
+    
+    const result = readUIntLE(buf, 0);
+    const expected = '0xf1f0fafbfdfffeff';
+    global.Buffer = Buffer;
+    
+    t.deepEqual(result, expected, 'shoudl equal');
+    t.end();
+});
+
