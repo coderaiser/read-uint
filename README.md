@@ -11,7 +11,7 @@ npm i read-uint
 ## How to use?
 
 ```js
-const readUint = require('read-uint');
+const {readUIntBE, readUIntLE} = require('read-uint');
 const buf = Buffer.from([0xff, 0xfe, 0xff, 0xfd, 0xfb, 0xfa, 0xf0, 0xf1]);
 
 readUIntBE(buf, 0);
