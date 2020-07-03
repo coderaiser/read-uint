@@ -42,14 +42,6 @@ const a = readUIntBE(buf, 0);
 const number = BigInt(parseInt(a, 16));
 ```
 
-## Environments
-
-In old `node.js` environments that not fully supports `es2015`, `read-uint` could be used with:
-
-```js
-var readUInt = require('read-uint/legacy');
-```
-
 ## License
 
 MIT
