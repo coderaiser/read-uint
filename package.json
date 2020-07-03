@@ -26,6 +26,9 @@
     "uint",
     "buffer"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "author": "coderaiser <mnemonic.enemy@gmail.com> (http://coderaiser.github.io/)",
   "license": "MIT",
   "bugs": {
