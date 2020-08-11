@@ -21,6 +21,12 @@
     "type": "git",
     "url": "git://github.com/coderaiser/read-uint.git"
   },
+  "nyc": {
+    "exclude": [
+      "test",
+      ".*.js"
+    ]
+  },
   "keywords": [
     "read",
     "uint",
